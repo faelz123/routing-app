@@ -4,7 +4,7 @@ import Button from './Button';
 
 import './Cadastro.css';
 
-const Cadastro = ({handleUfAdd}) => {
+const Cadastro = ({handleUfAdd, nome, sigla, cod}) => {
     const [inputData, setInputData] = useState({
         input1: '',
         input2: '',
@@ -31,7 +31,7 @@ const Cadastro = ({handleUfAdd}) => {
                 <input 
                     name='input1'
                     type='text' 
-                    placeholder='nome' 
+                    placeholder={nome} 
                     size='15'
                     onChange={handleInputChange}
                     value={inputData.input1}
@@ -41,7 +41,7 @@ const Cadastro = ({handleUfAdd}) => {
                 <input 
                     name='input2'
                     type='text'
-                    placeholder='sigla' 
+                    placeholder={sigla} 
                     size='15'
                     onChange={handleInputChange}
                     value={inputData.input2}
@@ -51,7 +51,7 @@ const Cadastro = ({handleUfAdd}) => {
                 <input 
                     name='input3'
                     type='text' 
-                    placeholder='código' 
+                    placeholder={cod} 
                     size='15'
                     onChange={handleInputChange}
                     value={inputData.input3}

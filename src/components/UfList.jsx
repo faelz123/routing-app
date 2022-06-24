@@ -37,7 +37,7 @@ const UfList = () => {
 
     return ( 
         <div>
-          <Cadastro handleUfAdd={handleUfAdd}/>
+          <Cadastro handleUfAdd={handleUfAdd} nome='nome' sigla='sigla' cod='código'/>
           <Consulta uf={uf}/>
         </div>
     );
