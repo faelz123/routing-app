@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 
 import Button from './Button';
+import Input from './Input';
 
 import './Cadastro.css';
 
-const Cadastro = ({handleUfAdd, nome, sigla, cod}) => {
+const Cadastro = ({handleUfAdd}) => {
     const [inputData, setInputData] = useState({
         input1: '',
         input2: '',
@@ -13,10 +14,10 @@ const Cadastro = ({handleUfAdd, nome, sigla, cod}) => {
         input5: ''
     });
 
-    const handleInputChange = (e) => {
-        setInputData(prevState => ({...prevState, [e.target.name]: e.target.value}));
-        console.log(inputData);
-    }
+    // const handleInputChange = (e) => {
+    //     setInputData(prevState => ({...prevState, [e.target.name]: e.target.value}));
+    //     console.log(inputData);
+    // }
 
     const handleUfAddClick = () => {
         if(inputData !== '') {
@@ -27,36 +28,10 @@ const Cadastro = ({handleUfAdd, nome, sigla, cod}) => {
 
     return ( 
         <div className='cadastro-container'>
-            <div>
-                <input 
-                    name='input1'
-                    type='text' 
-                    placeholder={nome} 
-                    size='15'
-                    onChange={handleInputChange}
-                    value={inputData.input1}
-                />
-            </div>
-            <div className='input-container'>
-                <input 
-                    name='input2'
-                    type='text'
-                    placeholder={sigla} 
-                    size='15'
-                    onChange={handleInputChange}
-                    value={inputData.input2}
-                />
-            </div>
-            <div className='input-container'>
-                <input 
-                    name='input3'
-                    type='text' 
-                    placeholder={cod} 
-                    size='15'
-                    onChange={handleInputChange}
-                    value={inputData.input3}
-                />
-            </div>
+            <Input setInputData={setInputData} input='input1' label='nome' inputData={inputData}/>
+            <Input setInputData={setInputData} input='input2' label='sigla' inputData={inputData}/>
+            <Input setInputData={setInputData} input='input3' label='código' inputData={inputData}/>
+
             <div className='input-container'>
                 <Button onClick={handleUfAddClick}>
                     Cadastrar
