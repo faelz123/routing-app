@@ -15,7 +15,7 @@ const Input = ({label, input, setInputData, inputData}) => {
         placeholder={label}
         size="15"
         onChange={handleInputChange}
-        value={inputData[input]}
+        value={inputData[input] || ''}
       />
     </div>
   );
