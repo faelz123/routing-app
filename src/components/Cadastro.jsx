@@ -8,10 +8,11 @@ import './Cadastro.css';
 const Cadastro = ({handleUfAdd, inputData, setInputData}) => {
     
       const handleUfAddClick = () => {
-        if (inputData !== "") {
-          handleUfAdd(inputData);
-          setInputData("");
-        }
+        console.log(inputData.input1)
+        handleUfAdd(inputData);
+        setInputData("");
+        // if(inputData.input1 !== ''){
+        // }
       };
 
     return ( 
