@@ -1,15 +1,12 @@
 import React from 'react';
 
-
 import Uf from './Uf';
 
-const Consulta = ({uf}) => {
-    
-    // const uf = props.uf
+const Consulta = ({dataUf}) => {
 
-    if(uf) {
+    if(dataUf) {
         return (
-            uf.map(uf => <Uf uf={uf} /> )
+            dataUf.map(uf => <Uf key={uf.codigoUF} uf={uf}/>)
         )
     }
 }

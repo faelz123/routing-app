@@ -1,7 +1,5 @@
 .cadastro-container {
-    display: inline-flex;
-}
-
-.input-container {
-    margin-left: 6px;
+    
+    display: flex;
+    padding-bottom: 5px;
 }

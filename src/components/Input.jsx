@@ -1,21 +1,24 @@
 import React from "react";
 
-const Input = ({label, input, setInputData, inputData}) => {
+const Input = ({ label, input, setInputData, inputData }) => {
 
-    const handleInputChange = (e) => {
-        setInputData(prevState => ({...prevState, [e.target.name]: e.target.value}));
-        console.log(inputData);
-    }
+  const handleInputChange = (e) => {
+    setInputData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
+  
   return (
-    <div>
+    <div style={{ paddingRight: "5px" }}>
       <input
         name={input}
-        type="text"
+        type={label === "senha" ? "password" : "text"}
         placeholder={label}
         size="15"
         onChange={handleInputChange}
-        value={inputData[input] || ''}
+        value={inputData[input] || ""}
       />
     </div>
   );

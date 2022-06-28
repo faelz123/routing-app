@@ -1,26 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
+
+
 import Cadastro from './Cadastro';
-
-
 import Consulta from './Consulta';
 
 
-const UfList = () => {
-
-    const [uf, setUf] = useState([
-        {
-          codigoUF: 1,
-          nome: "SÃO PAULO",
-          sigla: "SP",
-          status: 1
-        },
-        {
-          codigoUF: 2,
-          nome: "RIO DE JANEIRO",
-          sigla: "RJ",
-          status: 1
-        }
-      ]);
+const UfList = ({uf, setUf, inputData, setInputData}) => {
 
       const handleUfAdd = (ufCadastro) => {
         const newUf = [...uf, 
@@ -34,11 +19,20 @@ const UfList = () => {
         setUf(newUf);
       }
 
+      // const handleUfRemove = (ufId) => {
+      //   const newUf = uf.filter(uf => (uf.sigla !== ufId || uf.codigoUF !== ufId) );
+      //   setUf(newUf);
+      // }
 
-    return ( 
+    return (
         <div>
-          <Cadastro handleUfAdd={handleUfAdd} />
-          <Consulta uf={uf}/>
+          <Cadastro 
+            handleUfAdd={handleUfAdd} 
+            inputData={inputData} 
+            setInputData={setInputData} 
+            // handlePessoaAdd={'a'}
+          />
+          <Consulta dataUf={uf}/>
         </div>
     );
 }
