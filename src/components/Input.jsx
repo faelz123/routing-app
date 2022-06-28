@@ -9,6 +9,7 @@ const Input = ({ label, input, setInputData, inputData }) => {
     }));
   };
 
+  
   return (
     <div style={{ paddingRight: "5px" }}>
       <input

@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 import Cadastro from './Cadastro';
 import Consulta from './Consulta';
 
@@ -27,7 +26,12 @@ const UfList = ({uf, setUf, inputData, setInputData}) => {
 
     return (
         <div>
-          <Cadastro handleUfAdd={handleUfAdd} inputData={inputData} setInputData={setInputData} handlePessoaAdd={'a'}/>
+          <Cadastro 
+            handleUfAdd={handleUfAdd} 
+            inputData={inputData} 
+            setInputData={setInputData} 
+            // handlePessoaAdd={'a'}
+          />
           <Consulta dataUf={uf}/>
         </div>
     );

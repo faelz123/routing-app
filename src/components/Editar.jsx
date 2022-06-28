@@ -18,6 +18,7 @@ const Editar = ({ uf, setUf, inputData, setInputData }) => {
     history(-1);
 }
 
+
   const handleUfEdit = (ufSigla) => {
     const editedUf = uf.map(uf => {
         console.log(uf)

@@ -15,6 +15,7 @@ const Uf = ({uf}) => {
         history(`/uf/${uf.sigla}`)
     }
 
+    
     return ( 
         <div className='uf-container'> 
             {(`${uf.codigoUF} - ${uf.nome} - ${uf.sigla}`)}

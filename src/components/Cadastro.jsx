@@ -5,7 +5,7 @@ import Input from './Input';
 
 import './Cadastro.css';
 
-const Cadastro = ({handleUfAdd, inputData, setInputData, handlePessoaAdd}) => {
+const Cadastro = ({handleUfAdd, inputData, setInputData}) => {
     
       const handleUfAddClick = () => {
         if (inputData !== "") {
@@ -27,11 +27,11 @@ const Cadastro = ({handleUfAdd, inputData, setInputData, handlePessoaAdd}) => {
                 </Button>
             </div>
         </div>
-        {handlePessoaAdd !== undefined && <div className='cadastro-container'>
+        {/* {handlePessoaAdd !== undefined && <div className='cadastro-container'>
                 <Input setInputData={setInputData} input='input4' label='login' inputData={inputData}/>
                 <Input setInputData={setInputData} input='input5' label='senha' inputData={inputData}/>
             </div>
-            }
+            } */}
         </>
      );
 }
