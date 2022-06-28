@@ -42,7 +42,7 @@ function App() {
           <Link to='/uf'>Uf</Link>
           } />
           <Route path='/uf' exact element={<UfList uf={uf} setUf={setUf} inputData={inputData} setInputData={setInputData}/>} />
-          <Route path='/uf/:siglaUF' exact element={<Editar inputData={inputData} setInputData={setInputData} uf={uf} setUf={setUf}/>} />
+          <Route path='/uf/:ufselect' exact element={<Editar inputData={inputData} setInputData={setInputData} uf={uf} setUf={setUf}/>} />
         </Routes>
       </div>
     </Router>

@@ -19,10 +19,10 @@ const UfList = ({uf, setUf, inputData, setInputData}) => {
         setUf(newUf);
       }
 
-      // const handleUfRemove = (ufId) => {
-      //   const newUf = uf.filter(uf => (uf.sigla !== ufId || uf.codigoUF !== ufId) );
-      //   setUf(newUf);
-      // }
+      const handleUfRemove = (ufSigla , ufCodigoUF) => {
+        const newUf = uf.filter(uf => (uf.sigla !== ufSigla || uf.codigoUF !== ufCodigoUF) );
+        setUf(newUf);
+      }
 
     return (
         <div>
@@ -32,7 +32,7 @@ const UfList = ({uf, setUf, inputData, setInputData}) => {
             setInputData={setInputData} 
             // handlePessoaAdd={'a'}
           />
-          <Consulta dataUf={uf}/>
+          <Consulta handleUfRemove={handleUfRemove} dataUf={uf}/>
         </div>
     );
 }
