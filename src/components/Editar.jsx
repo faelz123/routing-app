@@ -15,8 +15,8 @@ const Editar = ({ uf, setUf, inputData, setInputData }) => {
   const newUf = uf.filter((uf) => uf.sigla === params.siglaUF);
 
   const handleBackButton = () => {
-    history(-1);
-}
+    history(`/uf`);
+  }
 
 
   const handleUfEdit = (ufSigla) => {
