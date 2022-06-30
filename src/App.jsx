@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom'
 
 import Editar from './components/Editar';
+import UfList from './components/UfList';
 
 import './App.css';
-import UfList from './components/UfList';
 //criar lista de objetos de uf
 //consultar por sigla ou codigoUF, traga apenas um registro, listando sem parametros traga todos os registros do banco de dados
 
@@ -12,19 +13,24 @@ function App() {
 
   const [uf, setUf] = useState([
     {
-      codigoUF: 1,
-      nome: "SÃO PAULO",
-      sigla: "SP",
-      status: 1
-    },
-    {
-      codigoUF: 2,
-      nome: "RIO DE JANEIRO",
-      sigla: "RJ",
+      codigoUF: '',
+      nome: '',
+      sigla: '',
       status: 1
     }
   ]);
 
+
+  useEffect(() => {
+    const fetchUf = async () => {
+      const {data} = await axios.get('http://localhost:3333/uf');
+      // console.log(data)
+      setUf(data.sort().reverse());
+    }
+    fetchUf();
+  }, [uf.length]);
+
+  // console.log('app', uf)
   const [inputData, setInputData] = useState({
     input1: "",
     input2: "",
@@ -33,7 +39,7 @@ function App() {
     input5: "",
   });
 
-  
+
   return (
     <Router>
       <div className='container'>

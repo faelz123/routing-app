@@ -3,7 +3,7 @@ import {useNavigate, useParams} from 'react-router-dom'
 
 import './Uf.css'
 
-const Uf = ({uf, handleUfRemove}) => {
+const Uf = ({uf, handleUfRemove, handleDeleteUf}) => {
 
     
     const history = useNavigate();
@@ -12,7 +12,7 @@ const Uf = ({uf, handleUfRemove}) => {
     // console.log(Object.keys(params))
 
     const handleUfInfo = () => {
-        history(`/uf/${uf.sigla}`)
+        history(`/uf/${uf.codigoUF}`)
     }
 
     
@@ -24,9 +24,12 @@ const Uf = ({uf, handleUfRemove}) => {
                 <button className='uf-edit-button' onClick={handleUfInfo}>
                 E
                 </button>
-                <button className='uf-remove-button' onClick={()=> handleUfRemove(uf.sigla , uf.codigoUF)}>
+                <button className='uf-remove-button' onClick={()=> handleDeleteUf(uf.codigoUF)}>
                 X
                 </button>
+                {/* <button className='uf-remove-button' onClick={()=> handleUfRemove(uf.sigla , uf.codigoUF)}>
+                X
+                </button> */}
                 </div>
             </>}
         </div>
